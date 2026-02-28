@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-primary-bg: #0A0A0F;
+  --color-secondary-bg: #111827;
+  --color-card-bg: #1F2937;
+  --color-primary-cta: #EF4444;
+  --color-secondary-cta: #F59E0B;
+  --color-accent-green: #10B981;
+  --color-border-subtle: #374151;
+}
+
+@layer base {
+  body {
+    @apply bg-primary-bg text-white font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+.glass-morphism {
+  @apply bg-card-bg/80 backdrop-blur-md border border-border-subtle;
+}
+
+.cta-button-primary {
+  @apply bg-primary-cta hover:bg-red-600 text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-200 text-center inline-block;
+}
+
+.cta-button-secondary {
+  @apply border-2 border-secondary-cta text-secondary-cta hover:bg-secondary-cta hover:text-white font-display font-bold py-4 px-8 rounded-lg transition-all duration-200 text-center inline-block;
+}
+
+.emergency-banner {
+  @apply bg-primary-cta text-white py-2 px-4 text-center font-bold text-sm sm:text-base animate-pulse;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-primary-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-border-subtle rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
